@@ -1,0 +1,145 @@
+#include <iostream>
+using namespace std;
+class Node
+{
+public:
+    int data;
+    Node *next;
+    Node(int val)
+    {
+        data = val;
+        next = NULL;
+    }
+};
+void traverse(Node *head)
+{
+    Node *temp = head;
+    while (head != NULL)
+    {
+        cout << head->data << " -> ";
+        head = head->next;
+    }
+}
+void insertAtHead(Node *&head, int val)
+{
+    Node *newNode = new Node(val);
+    newNode->next = head;
+    head = newNode;
+}
+void insertAtATail(Node *&head, int val)
+{
+    Node *newNode = new Node(val);
+    if (head == NULL)
+    {
+        head = newNode;
+        return;
+    }
+    Node *temp = head;
+    while (temp->next != NULL)
+        temp = temp->next;
+
+    temp->next = newNode;
+}
+int getLength(Node *head)
+{
+    int count = 0;
+    Node *temp = head;
+    while (temp != NULL)
+    {
+        count++;
+        temp = temp->next;
+    }
+    return count;
+}
+bool search(Node *&head, int val)
+{
+    Node *temp = head;
+    while (temp != NULL)
+    {
+        if (temp->data == val)
+        {
+            return true;
+        }
+        temp = temp->next;
+    }
+    return false;
+}
+void isEmpty(Node *&newNode)
+{
+    if (newNode == NULL)
+    {
+        cout << "Empty";
+        return;
+    }
+    else
+    {
+        cout << "Not Empty";
+    }
+    return;
+}
+void printLastElement(Node *head)
+{
+    if (head == NULL)
+    {
+        cout << "Ll is empty";
+        return;
+    }
+    Node *temp = head;
+    while (temp->next != NULL)
+    {
+        temp = temp->next;
+    }
+    cout << "Last element is " << temp->data;
+}
+void countOccurrences(Node *head, int key)
+{
+    int count = 0;
+    Node *temp = head;
+    while (temp != NULL)
+    {
+        if (temp->data == key)
+        {
+            count++;
+        }
+        temp = temp->next;
+    }
+    cout << "Occurrences of " << key << " are " << count;
+}
+int main()
+{
+    // // What is a linked list, and how does it differ from an array?
+
+    // A linkedlist list is a dynaic data structure where elemenst (nodes) are linked using pointes.
+    // Array : Stored in contigous mememory
+    // Linkedlist :Nodeds are scattered in memeort ,dynamic size
+
+    // 2. What are the types of linked lists?
+    // Single Linkedlist:Each node has a data field has a next pointer to the next pointer to the nest node
+    // Doube ll: Each node has prev and next pointer
+    // Circular linkedlist :the last node points back to the first node
+    // 3. How do you create a node in a linked list using C++?
+
+    Node *newNode = new Node(10);
+    cout << "Node created with value " << newNode->data << endl;
+    // // 4. How do you traverse a singly linked list?
+    // traverse(newNode);
+    // 5. How do you insert a node at the beginning of a linked list?
+
+    // insertAtHead(newNode,102);
+    // traverse(newNode);
+    // 6. How do you insert a node at the end of a linked list?
+
+    insertAtATail(newNode, 102);
+    // 9. How do you find the length of a linked list?
+    // cout<<getLength(newNode);
+    // cout<<endl;
+
+    // // 10. How do you search for an element in a linked list?
+
+    // cout<<search(newNode,188);
+
+    // isEmpty(newNode);
+
+    // printLastElement(newNode);
+    countOccurrences(newNode, 102);
+}
