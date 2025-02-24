@@ -143,3 +143,387 @@ int main()
     // printLastElement(newNode);
     countOccurrences(newNode, 102);
 }
+#include<iostream>
+using namespace std;
+class Node{
+    public:
+    int data;
+    Node* next;
+    Node(int value){
+        data=value;
+        next= NULL;
+    }
+};
+void insert(Node* &head,int data){
+    Node* newNode= new Node(data);
+    newNode->next=head;
+    head=newNode;
+}
+void insertAtEnd(Node* &head,int data){
+    Node* newNode= new Node(data);
+    if(head==NULL){
+        head=newNode;
+        return;
+    }
+    Node* temp=head;
+    while(temp->next!=NULL){
+        temp=temp->next;
+    }
+    temp->next=newNode;
+
+}
+void countNode(Node* &head){
+    int count =0;
+    Node* temp=head;
+    while(temp!=NULL){
+        count++;
+        temp=temp->next;
+    }
+    cout<<"Total Nodes :"<<count<<endl;
+
+}
+void printLL(Node* &head){
+    Node *temp = head;
+    while(temp!=NULL){
+        cout<<temp->data<<" -> ";
+        temp=temp->next;
+    }
+}
+bool search(Node* &head,int key){
+    Node *temp= head;
+    while(temp!=NULL){
+        if(temp->data == key){
+            return true;
+        }
+        temp=temp->next;
+    }
+    return false;
+}
+void deleteFirstNode(Node* &head){
+    if(head==NULL){
+        cout<<"Cannot delete from an empty list"<<endl;
+        return;
+    }
+    Node* temp = head;
+    head=head->next;
+    delete temp;
+    return;
+}
+class Node{
+    public:
+    int data;
+    Node* next;
+    Node(int val){
+        data= val;
+        next= nullptr;
+    }
+};
+class Node{
+    public:
+    int data;
+    Node* nect;
+    Node(int val){
+        data=val;
+        next=nullptr;
+    }
+};
+class Node{
+    public:
+    Node* next;
+    Node(int val){
+        data=val;
+        next=nullptr;
+    }
+
+
+
+void printList(Node* & head){
+    Node* temp = head;
+    while(temo!=NULL){
+        cout<<temp->data<<" ";
+        temp=temp->next;
+
+    }
+};
+class Node{
+    public:
+    int data;
+    Node* next;
+    Node(int val){
+        data=val;
+        next=nullptr;
+    }
+};
+void printLL(Node* head){
+    while(head){
+        cout<<head->data<<" ";
+        head=head->next;
+    }
+}
+void insertAtHead(Node* head,int data){
+    // 
+    Node* newNode=new Node(data);
+    newNode->next= head;
+    head = newNode;
+}
+void insertAtEnd(Node *head,int data){
+    Node *temp = head;
+    while(temp->next!=NULL){
+        temp=temp->next;
+
+    }
+    temp->next= temp;
+}
+int count(Node *head){
+    int count =0;
+    while(head){
+        count++;
+        head= head->next;
+    }
+    return count;
+}
+bool search(node* head,int key){
+    while(head){
+        if(head->data== key){
+           return true;
+        }
+        head=head->next;
+    }
+    return false;
+}
+void deleteLastNode(Node* &head){
+    Node *temp = head;
+    while(temp->next!=NULL){
+        temp=temp->next;
+    }
+    temp->next=NULL;
+}
+void reverse(Node* head){
+    Node* prev = NULL, *next =NULL;
+    while(head){
+        next = head->next;
+        head->next=prev;
+        prev=head;
+        head=next;
+    }
+}
+void printList(Node* head){
+    while(head){
+        cout<<head->data<<" ";
+        head = head ->next;
+    }
+
+}
+void insertAtBegin(Node* head,int data){
+    Node* newNode = new Node(data);
+    newNode->next=head;
+    head=newNode;
+}
+int main(){
+    // 1. Create a Node in a Linked List
+    // Node *head = new Node(10);
+    // cout<<"Node data :"<<head->data<<endl;
+    // 2. Create a Linked List with Two Nodes
+    // Node* head = new Node(10);
+    // head->next= new Node(20);
+    // cout<<"Node data :"<<head->data<<endl;
+    // cout<<"Node data :"<<head->next->data<<endl;
+    // 3. Insert a node at the beginning of a Linked List
+    // Node* head=NULL;
+    // insert(head,10);
+    // insert(head,20);
+    // insert(head,30);
+    // printLL(head);
+    // 4. Insert a Node at the End
+    // 5. Count the Number of Nodes
+    // 6. Print the Linked List
+
+    // Node* head=NULL;
+    // insertAtEnd(head,10);
+    // insertAtEnd(head,20);
+    // insertAtEnd(head,30);
+    // printLL(head);
+    // countNode(head);
+    // // 6. Search for a Value in the Linked List
+    // cout<<search(head,20); // should return true
+    // cout<<search(head,40); // should return false
+//     // 7. Delete the First Node
+// Node* head= new NOde(5);
+// head->next = new Node(10);
+// cout<<head->next->data;
+// // printing 3Nodes.
+// Node* head= new Node(10);
+// head->next = new Node(15);
+// head->next->next = new Node(20);
+// 5. Insert a Node at the Beginning
+    // Node* head= new Node(20);
+    // cout<<head->data;
+    // head->next = new Node(10);
+    // cout<<head->next->data;  
+    // Node* head = new Node(5);
+    // head->next = new Node(10);
+    // cout<<head->next->data;
+//     1. Create an Empty Linked List
+//     Node* head = NULL:
+//     2. Create a Node with a Value
+//     Node* node = new Node(10);
+//     cout<<node->data;
+//     3. Link Two Nodes Together
+//     Node* first = new NOde(1);
+//     Node* second = new Node(2);
+//     first->next = second;
+//     4. Print the First Node’s Value
+//     cout<<first->next;
+//     5. Check If a Linked List is Empty
+//     if(head==NULL){
+//         cout<<"List is empty";
+//     }
+//     6. Assign Head to Another Variable
+//     Node* temp = head;
+//     7. Print the Value of the Next Node
+// cout<<head ->next->data;
+// 8. Create Three Nodes in a Single Step
+// Node* head = new Node(1);
+// head->next = new Node(2);
+// head->next->next = new NOde(3);
+// 9. Print All Nodes in a Loop
+// Node * temp = head;
+// while(temp){
+//     cout<<temp->data<<" ";
+//     temp=temp->next;
+// }
+// 10. Check if the Last Node is NULL
+// if(head->next ==NULL){
+//     cout<<"End of list"<<endl;
+// }
+1. What is a Linked List?
+A linked list is a sequesnace of  node where each npde constains data and a pointer to the next node.
+
+2. How do you declare a Linked List?
+Node* head=nullptr;
+
+3. How do you create a new node with value 10?
+Node * newnode= new Node(10);
+
+4. How do you set one node’s next pointer to another node?
+newNOde->next= anotherNode;
+
+if(head ==NULL){
+    cout<<"Empty Linked List"
+}
+6. How do you print the first node’s data?
+cout<<head->data;
+7. How do you print the second node’s data?
+cout<<head->next->next->data;
+8. How do you create two nodes and connect them?
+Node* first = new Node(1);
+NOde* second = new Node(2);
+first->next = second;
+9. How do you move a pointer to the next node?
+head = head->next;
+10. How do you check if a node has a next node?
+if(head->next!=NULL){
+    cout<<"There is a next node";
+}
+11. How do you create a three-node linked list?
+Node* head= new Node(1);
+head->next = new Node(2);
+head->next->next = new Node(3);
+12. How do you print all nodes in a loop?
+Node* temp= head;
+while(temp){
+    cout<<temp->data<<" ";
+    temp=temp->next;
+}
+13. How do you set the last node’s next pointer to NULL?
+lastNode->next=NULL;
+14. How do you count the number of nodes in a list?
+int count =0l
+Node* temp= head;
+while(temp){
+    count++;
+    temp= temp->next;
+}
+cout<<count<<" ";
+
+15. How do you delete the first node in a linked list?
+Node* temp= head;
+head=head->next;
+delete temp;
+16. How do you insert a node at the beginning?
+Node *newNode=new Node(0);
+newNode->next= head;
+head= newNode;
+17. How do you insert a node at the end?
+Node* temp= head;
+while(temp->next){
+    temp = temp->next;
+}
+temp->next = newNode(2);
+18. How do you find the last node in a list?
+while(head->next){
+    head= head->next;
+}
+cout<<head->data;
+
+// 19. How do you delete the last node?
+// Node* temp= head;
+// while(temp->next->next){
+//     temp = temp->next;
+// }
+// delete
+// }
+20. How do you check if two nodes are connected?
+if(node1->next==node2){
+    cout<<"Connected";
+}
+1. What is a node?
+A node is small part of the ll that store data and  a pointer to next node.
+2. What is a pointer?
+A pointer is a variable that store the memory adress of another variable.
+3. What does nullptr mean?
+nullptr mneans "nothing" or "empty" in c++.
+4. What is head in a linked list?
+head is the first node in ll.
+5. What does head
+ = nullptr; do?
+Node* head = nullptr;
+6. How do you create an empty linked list?
+Node* head= nullptr;
+7. How do you create a new node with value 1?
+Node* newNode= new Node(1);
+8. What does -> mean in head->next?
+It means "go to next node" in the ll.
+9. How do you check if a node has another node after it?
+if(head->next!=NULL){
+    cout<<"There is a next node";
+}
+10. What does head = head->next; do?
+It moves the head to next node.
+11. How do you make a second node in a linked list?
+Node* head = new Node(1);
+head->next= new Node(2);
+head->next->next=new Node(3);
+13. How do you print the first node’s value?
+cout<<head->data;
+14. How do you print the second node’s value?
+cout<<head->next->data;
+15. How do you make the last node point to nullptr?
+cpp
+head->next->next->next=NULL;
+16. What happens if a node’s next is nullptr?
+It means this i snode is the last node o the list.
+17. How do you move to the last node?
+while(head->next!=NULL){
+    head= head->next;
+}
+18. How do you check if a linked list is empty?
+if(head == NULL){
+    cout<<"List is empty";
+}
+19. How do you delete the first node?
+Node* temp = head;
+head = head->next;
+delete temp;
+20. How do you make a node’s next point to another node?
+firstNode-next = ssecondNode;
