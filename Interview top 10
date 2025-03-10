@@ -1,0 +1,161 @@
+#include <iostream>
+using namespace std;
+// ListNode* reverseList(ListNode* head){
+//     ListNode* prev = NULL;
+//     ListNode* curr = head;
+//     ListNode* next = NULL;
+//     while(curr){
+//         next = curr->next;
+//         curr->next = prev;
+//         prev = curr;
+//         curr = next;
+//     }
+//     return prev;
+
+// }
+
+// ListNode* middleNode(){
+//     ListNode* slow =head;
+//     ListNode* fast = head;
+//     while(fast && fast->next){
+//         slow = slow->next;
+//         fast = fast->next->next;
+//     }
+//     return slow;
+// }
+
+// int lengthOfLL(ListNode* &head){
+//     int len=0;
+//     ListNode* temp = head;
+//     while(temp){
+//         temp= temp->next;
+//         len++;
+//     }
+//     return len;
+// }
+
+// class Node{
+//     public:
+//     int data;
+//     Node* next;
+//     Node(int val){
+//         data = val;
+//         next = NULL;
+//     }
+// }
+
+// bool isPalendrime(Node* &head){
+//     Node* slow=head;
+//     Node* fast=head;
+//     while(fast && fast->next){
+//         slow = slow->next;
+//         fast = fast->next->next;
+
+//     }
+//     // rever the half of the linked list
+// Node* prev = NULL;
+// Node* curr=head;
+// Noode* next = NULL;
+// while(curr){
+//     next = curr->next;
+//     curr->next = prev;
+//     prev = curr;
+//     curr= next;
+// }
+// after the linked list is reversed lets compare the head to the prev
+//     Node* temp= head;
+//     while(temp && prev){
+//         if(temp->data!=pre->data){
+//             return false;
+//         }
+//         temp = temp->next;
+//         prev = prev->next;
+//     }
+//     return true;
+// }
+struct ListNode
+{
+    int val;
+    ListNode *next;
+    ListNode(int x)
+    {
+        val = x;
+        next = NULL;
+    }
+};
+ListNode *reverseList(ListNode *head)
+{
+    ListNode *prev = NULL;
+    ListNode *curr = head;
+    ListNode *next = NULL;
+    while (curr)
+    {
+        next = curr->next;
+        curr->next = prev;
+        prev = curr;
+        curr = next;
+    }
+    return prev;
+}
+ListNode *middleElement(ListNode *head)
+{
+    ListNode *slow = head;
+    ListNode *fast = head;
+    while (fast && fast->next)
+    {
+        slow = slow->next;
+        fast = fast->next->next;
+    }
+    return slow;
+}
+
+bool cycle(ListNode *head)
+{
+    ListNode *slow = head;
+    ListNode *fast = head;
+    while (fast != NULL && fast->next != NULL)
+    {
+        slow = slow->next;
+        fast = fast->next->next;
+
+        if (slow == fast)
+        {
+            return true;
+        }
+    }
+    return false;
+}
+int countNode(ListNode *head)
+{
+    int count = 0;
+    ListNode *temp = head;
+    while (temp != NULL)
+    {
+        count++;
+        temp = temp->next;
+    }
+    return count;
+}
+bool searchValue(ListNode *head, int val)
+{
+    ListNode *temp = head;
+    while (temp)
+    {
+        if (temp->val == val)
+        {
+            return true;
+        }
+        temp = temp->next;
+    }
+    return false;
+}
+int main()
+{
+    // ll interview questaion
+    // 1. Reverse a Linked List
+    // 🔁 Problem: Reverse a Linked List
+    // 📍 1. Find the Middle of the Linked List
+    // 📍 2. Detect Cycle in a Linked List
+    //  Count the Number of Nodes in a Linked List
+    // 📍 2. Search for a Value in a Linked List
+}
